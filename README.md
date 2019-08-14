@@ -73,13 +73,13 @@ Direct developer email support can be purchased through a [Support Plan][4] or b
 [3]: https://stackoverflow.com/questions/tagged/lightningchart
 [4]: https://www.arction.com/support-services/
 
-[AutoCursorModes]: https://www.arction.com/lightningchart-js-api-documentation/v1.0.0/enums/autocursormodes.html
-[AxisTickStrategies]: https://www.arction.com/lightningchart-js-api-documentation/v1.0.0/globals.html#axistickstrategies
-[ChartXY]: https://www.arction.com/lightningchart-js-api-documentation/v1.0.0/classes/chartxy.html
-[ColorHEX]: https://www.arction.com/lightningchart-js-api-documentation/v1.0.0/globals.html#colorhex
-[emptyFill]: https://www.arction.com/lightningchart-js-api-documentation/v1.0.0/globals.html#emptyfill
-[emptyLine]: https://www.arction.com/lightningchart-js-api-documentation/v1.0.0/globals.html#emptyline
-[emptyTick]: https://www.arction.com/lightningchart-js-api-documentation/v1.0.0/globals.html#emptytick
-[PointShape]: https://www.arction.com/lightningchart-js-api-documentation/v1.0.0/enums/pointshape.html
-[SolidFill]: https://www.arction.com/lightningchart-js-api-documentation/v1.0.0/classes/solidfill.html
-[SolidLine]: https://www.arction.com/lightningchart-js-api-documentation/v1.0.0/classes/solidline.html
+[AutoCursorModes]: https://www.arction.com/lightningchart-js-api-documentation/v1.0.1/enums/autocursormodes.html
+[AxisTickStrategies]: https://www.arction.com/lightningchart-js-api-documentation/v1.0.1/globals.html#axistickstrategies
+[ChartXY]: https://www.arction.com/lightningchart-js-api-documentation/v1.0.1/classes/chartxy.html
+[ColorHEX]: https://www.arction.com/lightningchart-js-api-documentation/v1.0.1/globals.html#colorhex
+[emptyFill]: https://www.arction.com/lightningchart-js-api-documentation/v1.0.1/globals.html#emptyfill
+[emptyLine]: https://www.arction.com/lightningchart-js-api-documentation/v1.0.1/globals.html#emptyline
+[emptyTick]: https://www.arction.com/lightningchart-js-api-documentation/v1.0.1/globals.html#emptytick
+[PointShape]: https://www.arction.com/lightningchart-js-api-documentation/v1.0.1/enums/pointshape.html
+[SolidFill]: https://www.arction.com/lightningchart-js-api-documentation/v1.0.1/classes/solidfill.html
+[SolidLine]: https://www.arction.com/lightningchart-js-api-documentation/v1.0.1/classes/solidline.html
