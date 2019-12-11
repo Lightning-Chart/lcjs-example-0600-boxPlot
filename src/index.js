@@ -1,4 +1,4 @@
-/**
+/*
  * LightningChartJS example that showcases the creation and styling of box series.
  */
 // Import LightningChartJS

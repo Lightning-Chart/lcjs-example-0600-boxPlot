@@ -1,6 +1,5 @@
 # Box and Whiskers Chart
 
-
 This demo application belongs to the set of examples for LightningChart JS, data visualization library for JavaScript.
 
 LightningChart JS is entirely GPU accelerated and performance optimized charting library for presenting massive amounts of data. It offers an easy way of creating sophisticated and interactive charts and adding them to your website or web application.
@@ -15,7 +14,8 @@ The demo can be used as an example or a seed project. Local execution requires t
 
 - The application is available at *http://localhost:8080* in your browser, webpack-dev-server provides hot reload functionality.
 
-### Description
+
+## Description
 
 Example creates a traditional *Box and Whiskers Chart* using *ChartXY*, *BoxSeries* and *PointSeries* for outliers.
 
@@ -39,21 +39,22 @@ Here are the types of observations one can make from viewing a *Box And Whiskers
 - How tightly is the data grouped.
 - If the data is skewed and if so, in what direction.
 
-### API links
 
-* XY cartesian chart: [ChartXY][]
-* Axis tick strategies: [AxisTickStrategies][]
-* AutoCursor modes: [AutoCursorModes][]
-* Point shapes: [PointShape][]
-* HEX Color factory: [ColorHEX][]
-* Solid Fill style: [SolidFill][]
-* Solid Line style: [SolidLine][]
-* Empty Axis tick style: [emptyTick][]
-* Empty Fill style: [emptyFill][]
-* Empty Line style: [emptyLine][]
+## API Links
+
+* XY cartesian chart: [ChartXY]
+* Axis tick strategies: [AxisTickStrategies]
+* AutoCursor modes: [AutoCursorModes]
+* Point shapes: [PointShape]
+* HEX Color factory: [ColorHEX]
+* Solid Fill style: [SolidFill]
+* Solid Line style: [SolidLine]
+* Empty Axis tick style: [emptyTick]
+* Empty Fill style: [emptyFill]
+* Empty Line style: [emptyLine]
 
 
-### Support
+## Support
 
 If you notice an error in the example code, please open an issue on [GitHub][0] repository of the entire example.
 
@@ -65,21 +66,23 @@ If you think you found a bug in the LightningChart JavaScript library, please co
 
 Direct developer email support can be purchased through a [Support Plan][4] or by contacting sales@arction.com.
 
-© Arction Ltd 2009-2019. All rights reserved.
-
 [0]: https://github.com/Arction/
 [1]: https://www.arction.com/lightningchart-js-api-documentation/
 [2]: https://www.arction.com
 [3]: https://stackoverflow.com/questions/tagged/lightningchart
 [4]: https://www.arction.com/support-services/
 
-[AutoCursorModes]: https://www.arction.com/lightningchart-js-api-documentation/v1.1.0/enums/autocursormodes.html
-[AxisTickStrategies]: https://www.arction.com/lightningchart-js-api-documentation/v1.1.0/globals.html#axistickstrategies
-[ChartXY]: https://www.arction.com/lightningchart-js-api-documentation/v1.1.0/classes/chartxy.html
-[ColorHEX]: https://www.arction.com/lightningchart-js-api-documentation/v1.1.0/globals.html#colorhex
-[emptyFill]: https://www.arction.com/lightningchart-js-api-documentation/v1.1.0/globals.html#emptyfill
-[emptyLine]: https://www.arction.com/lightningchart-js-api-documentation/v1.1.0/globals.html#emptyline
-[emptyTick]: https://www.arction.com/lightningchart-js-api-documentation/v1.1.0/globals.html#emptytick
-[PointShape]: https://www.arction.com/lightningchart-js-api-documentation/v1.1.0/enums/pointshape.html
-[SolidFill]: https://www.arction.com/lightningchart-js-api-documentation/v1.1.0/classes/solidfill.html
-[SolidLine]: https://www.arction.com/lightningchart-js-api-documentation/v1.1.0/classes/solidline.html
+© Arction Ltd 2009-2019. All rights reserved.
+
+
+[ChartXY]: https://www.arction.com/lightningchart-js-api-documentation/v1.2.0/classes/chartxy.html
+[AxisTickStrategies]: https://www.arction.com/lightningchart-js-api-documentation/v1.2.0/globals.html#axistickstrategies
+[AutoCursorModes]: https://www.arction.com/lightningchart-js-api-documentation/v1.2.0/enums/autocursormodes.html
+[PointShape]: https://www.arction.com/lightningchart-js-api-documentation/v1.2.0/enums/pointshape.html
+[ColorHEX]: https://www.arction.com/lightningchart-js-api-documentation/v1.2.0/globals.html#colorhex
+[SolidFill]: https://www.arction.com/lightningchart-js-api-documentation/v1.2.0/classes/solidfill.html
+[SolidLine]: https://www.arction.com/lightningchart-js-api-documentation/v1.2.0/classes/solidline.html
+[emptyTick]: https://www.arction.com/lightningchart-js-api-documentation/v1.2.0/globals.html#emptytick
+[emptyFill]: https://www.arction.com/lightningchart-js-api-documentation/v1.2.0/globals.html#emptyfill
+[emptyLine]: https://www.arction.com/lightningchart-js-api-documentation/v1.2.0/globals.html#emptyline
+
