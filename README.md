@@ -23,7 +23,7 @@ Example creates a traditional *Box and Whiskers Chart* using *ChartXY*, *BoxSeri
 
 *Box and Whiskers Chart* provides a compact way of visually displaying distribution of data through *quartiles*.
 
-### Anatomy
+## Anatomy
 
 The lines extending parallel from the boxes are known as the "whiskers", which are used to indicate variability outside the upper and lower quartiles.
 
