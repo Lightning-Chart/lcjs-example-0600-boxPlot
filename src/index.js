@@ -22,7 +22,7 @@ const {
 const allData = [
     {
         name: 'Software developer',
-        color: '#e67e22',
+        color: '#22162B',
         outlierShape: PointShape.Circle,
         data: {
             lowerExtreme: 17.5,
@@ -37,7 +37,7 @@ const allData = [
     },
     {
         name: 'Cashier',
-        color: '#2980b9',
+        color: '#724E91',
         outlierShape: PointShape.Circle,
         data: {
             lowerExtreme: 14.0,
@@ -53,7 +53,7 @@ const allData = [
     },
     {
         name: 'Janitor',
-        color: '#27ae60',
+        color: '#451F55',
         outlierShape: PointShape.Circle,
         data: {
             lowerExtreme: 15.2,
@@ -67,10 +67,9 @@ const allData = [
 ]
 
 // ----- Define styles for light theme -----
-const theme = {
-    whiteFill: new SolidFill({ color: ColorHEX('#FFFFFF') }),
+const theme = { 
     lightGrayFill: new SolidFill({ color: ColorHEX('#A0A0A0A0') }),
-    darkFill: new SolidFill({ color: ColorHEX('#505050') })
+    yellowFill: new SolidFill({color: ColorHEX('#ffa500')})
 }
 
 // ----- Create a XY Chart -----
@@ -78,18 +77,12 @@ const chart = lightningChart().ChartXY({
     defaultAxisYTickStrategy: AxisTickStrategies.NumericWithUnits
 })
     .setTitle('Age distribution across professions')
-    .setTitleFillStyle(theme.darkFill)
     .setTitleFont((font) => font
         .setSize(32)
     )
     // Disable interactions.
     .setAutoCursorMode(AutoCursorModes.disabled)
     .setMouseInteractions(false)
-
-// ----- Style Chart to a lighter theme -----
-chart
-    .setBackgroundFillStyle(theme.whiteFill)
-    .setChartBackgroundFillStyle(theme.whiteFill)
 
 // ----- Setup axes -----
 const gridStrokeStyle = new SolidLine({
@@ -98,7 +91,6 @@ const gridStrokeStyle = new SolidLine({
 })
 const axisX = chart.getDefaultAxisX()
     .setTitle('Profession')
-    .setTitleFillStyle(theme.darkFill)
     .setStrokeStyle(gridStrokeStyle)
     // No default ticks.
     .setTickStyle(emptyTick)
@@ -107,9 +99,7 @@ const axisX = chart.getDefaultAxisX()
 
 const axisY = chart.getDefaultAxisY()
     .setTitle('Age')
-    .setTitleFillStyle(theme.darkFill)
     .setTickStyle((visibleTicks) => visibleTicks
-        .setLabelFillStyle(theme.darkFill)
         .setTickStyle(emptyLine)
         .setGridStrokeStyle(gridStrokeStyle)
     )
@@ -123,9 +113,8 @@ const axisY = chart.getDefaultAxisY()
 // ----- Map over per each data item -----
 const boxFigureStrokeStyle = new SolidLine({
     thickness: 4,
-    fillStyle: theme.darkFill
+    fillStyle: theme.yellowFill
 })
-const outlierFillStyle = theme.darkFill
 
 allData.forEach((profession, i) => {
     const data = profession.data
@@ -147,7 +136,7 @@ allData.forEach((profession, i) => {
         pointShape: profession.outlierShape ? profession.outlierShape : PointShape.Circle
     })
         .setPointSize(20)
-        .setPointFillStyle(outlierFillStyle)
+        .setPointFillStyle(theme.yellowFill)
 
     // ----- Setup shared highlighting between box and point series -----
     boxSeries.onHover((_, cp) => pointSeries.setHighlighted(cp !== undefined))
@@ -183,7 +172,6 @@ allData.forEach((profession, i) => {
         .setTextFormatter(() => profession.name)
         .setGridStrokeLength(0)
         .setMarker((marker) => marker
-            .setTextFillStyle(theme.darkFill)
             .setBackground((background) => background
                 .setFillStyle(emptyFill)
                 .setStrokeStyle(emptyLine)
