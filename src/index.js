@@ -15,7 +15,8 @@ const {
     SolidLine,
     AxisTickStrategies,
     AutoCursorModes,
-    PointShape
+    PointShape,
+    Themes
 } = lcjs
 
 // ----- Define data for application -----
@@ -67,14 +68,14 @@ const allData = [
 ]
 
 // ----- Define styles for light theme -----
-const theme = { 
+const theme = {
     lightGrayFill: new SolidFill({ color: ColorHEX('#A0A0A0A0') }),
-    yellowFill: new SolidFill({color: ColorHEX('#ffa500')})
+    yellowFill: new SolidFill({ color: ColorHEX('#ffa500') })
 }
 
 // ----- Create a XY Chart -----
 const chart = lightningChart().ChartXY({
-    defaultAxisYTickStrategy: AxisTickStrategies.NumericWithUnits
+    // theme: Themes.dark
 })
     .setTitle('Age distribution across professions')
     .setTitleFont((font) => font
@@ -93,22 +94,34 @@ const axisX = chart.getDefaultAxisX()
     .setTitle('Profession')
     .setStrokeStyle(gridStrokeStyle)
     // No default ticks.
-    .setTickStyle(emptyTick)
+    .setTickStrategy(AxisTickStrategies.Empty)
     // Disable interactions.
     .setMouseInteractions(false)
 
+// Style the default Y Axis
 const axisY = chart.getDefaultAxisY()
     .setTitle('Age')
-    .setTickStyle((visibleTicks) => visibleTicks
-        .setTickStyle(emptyLine)
-        .setGridStrokeStyle(gridStrokeStyle)
-    )
     .setStrokeStyle(gridStrokeStyle)
     // Set Y-view manually.
     .setScrollStrategy(undefined)
     .setInterval(10, 63)
     // Disable interactions.
     .setMouseInteractions(false)
+
+// Style the Y Axis Ticks through the TickStrategy
+axisY
+    .setTickStrategy(
+        // Base TickStrategy to modify
+        AxisTickStrategies.Numeric,
+        // Modify the TickStrategy through a mutator
+        (tickStrategy) => tickStrategy
+            // Use custom grid stroke for the Major Ticks.
+            .setMajorTickStyle(tickStyle => tickStyle
+                .setGridStrokeStyle(gridStrokeStyle)
+            )
+            // Don't draw minor ticks.
+            .setMinorTickStyle(emptyTick)
+    )
 
 // ----- Map over per each data item -----
 const boxFigureStrokeStyle = new SolidLine({
@@ -176,6 +189,7 @@ allData.forEach((profession, i) => {
                 .setFillStyle(emptyFill)
                 .setStrokeStyle(emptyLine)
             )
+            .setTextFillStyle(new SolidFill({ color: ColorHEX('#aaaf') }))
             .setFont((font) => font
                 .setSize(24)
             )

@@ -44,16 +44,16 @@ Here are the types of observations one can make from viewing a *Box And Whiskers
 
 ## API Links
 
-* XY cartesian chart: [ChartXY]
-* Axis tick strategies: [AxisTickStrategies]
-* AutoCursor modes: [AutoCursorModes]
-* Point shapes: [PointShape]
-* HEX Color factory: [ColorHEX]
-* Solid Fill style: [SolidFill]
-* Solid Line style: [SolidLine]
-* Empty Axis tick style: [emptyTick]
-* Empty Fill style: [emptyFill]
-* Empty Line style: [emptyLine]
+* [XY cartesian chart]
+* [Axis tick strategies]
+* [AutoCursor modes]
+* [Point shapes]
+* [HEX Color factory]
+* [Solid Fill style]
+* [Solid Line style]
+* [Empty Axis tick style]
+* [Empty Fill style]
+* [Empty Line style]
 
 
 ## Support
@@ -77,14 +77,14 @@ Direct developer email support can be purchased through a [Support Plan][4] or b
 © Arction Ltd 2009-2020. All rights reserved.
 
 
-[ChartXY]: https://www.arction.com/lightningchart-js-api-documentation/v1.3.0/classes/chartxy.html
-[AxisTickStrategies]: https://www.arction.com/lightningchart-js-api-documentation/v1.3.0/globals.html#axistickstrategies
-[AutoCursorModes]: https://www.arction.com/lightningchart-js-api-documentation/v1.3.0/enums/autocursormodes.html
-[PointShape]: https://www.arction.com/lightningchart-js-api-documentation/v1.3.0/enums/pointshape.html
-[ColorHEX]: https://www.arction.com/lightningchart-js-api-documentation/v1.3.0/globals.html#colorhex
-[SolidFill]: https://www.arction.com/lightningchart-js-api-documentation/v1.3.0/classes/solidfill.html
-[SolidLine]: https://www.arction.com/lightningchart-js-api-documentation/v1.3.0/classes/solidline.html
-[emptyTick]: https://www.arction.com/lightningchart-js-api-documentation/v1.3.0/globals.html#emptytick
-[emptyFill]: https://www.arction.com/lightningchart-js-api-documentation/v1.3.0/globals.html#emptyfill
-[emptyLine]: https://www.arction.com/lightningchart-js-api-documentation/v1.3.0/globals.html#emptyline
+[XY cartesian chart]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/classes/chartxy.html
+[Axis tick strategies]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/globals.html#axistickstrategies
+[AutoCursor modes]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/enums/autocursormodes.html
+[Point shapes]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/enums/pointshape.html
+[HEX Color factory]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/globals.html#colorhex
+[Solid Fill style]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/classes/solidfill.html
+[Solid Line style]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/classes/solidline.html
+[Empty Axis tick style]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/globals.html#emptytick
+[Empty Fill style]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/globals.html#emptyfill
+[Empty Line style]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/globals.html#emptyline
 
