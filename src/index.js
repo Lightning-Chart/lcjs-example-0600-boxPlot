@@ -16,6 +16,7 @@ const {
     AxisTickStrategies,
     AutoCursorModes,
     PointShape,
+    UIElementBuilders,
     Themes
 } = lcjs
 
@@ -180,17 +181,13 @@ allData.forEach((profession, i) => {
     })
 
     // ----- Create CustomTick on X-Axis for displaying name of profession -----
-    axisX.addCustomTick()
+    axisX.addCustomTick(UIElementBuilders.AxisTick)
         .setValue(middle)
         .setTextFormatter(() => profession.name)
         .setGridStrokeLength(0)
         .setMarker((marker) => marker
-            .setBackground((background) => background
-                .setFillStyle(emptyFill)
-                .setStrokeStyle(emptyLine)
-            )
             .setTextFillStyle(new SolidFill({ color: ColorHEX('#aaaf') }))
-            .setFont((font) => font
+            .setTextFont((font) => font
                 .setSize(24)
             )
         )
