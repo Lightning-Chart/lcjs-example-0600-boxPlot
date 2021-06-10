@@ -1,6 +1,6 @@
-# Box and Whiskers Chart
+# JavaScript Box and Whiskers Chart
 
-![Box and Whiskers Chart](boxPlot.png)
+![JavaScript Box and Whiskers Chart](boxPlot.png)
 
 This demo application belongs to the set of examples for LightningChart JS, data visualization library for JavaScript.
 
