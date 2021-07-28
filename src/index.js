@@ -8,8 +8,6 @@ const lcjs = require('@arction/lcjs')
 const {
     lightningChart,
     emptyTick,
-    emptyFill,
-    emptyLine,
     ColorHEX,
     SolidFill,
     SolidLine,
@@ -24,8 +22,6 @@ const {
 const allData = [
     {
         name: 'Software developer',
-        color: '#22162B',
-        outlierShape: PointShape.Circle,
         data: {
             lowerExtreme: 17.5,
             lowerQuartile: 19.6,
@@ -39,8 +35,6 @@ const allData = [
     },
     {
         name: 'Cashier',
-        color: '#724E91',
-        outlierShape: PointShape.Circle,
         data: {
             lowerExtreme: 14.0,
             lowerQuartile: 19.5,
@@ -55,8 +49,6 @@ const allData = [
     },
     {
         name: 'Janitor',
-        color: '#451F55',
-        outlierShape: PointShape.Circle,
         data: {
             lowerExtreme: 15.2,
             lowerQuartile: 18.5,
@@ -68,32 +60,18 @@ const allData = [
     }
 ]
 
-// ----- Define styles for light theme -----
-const theme = {
-    lightGrayFill: new SolidFill({ color: ColorHEX('#A0A0A0A0') }),
-    yellowFill: new SolidFill({ color: ColorHEX('#ffa500') })
-}
-
 // ----- Create a XY Chart -----
 const chart = lightningChart().ChartXY({
-    // theme: Themes.dark
+    // theme: Themes.darkGold
 })
     .setTitle('Age distribution across professions')
-    .setTitleFont((font) => font
-        .setSize(32)
-    )
     // Disable interactions.
     .setAutoCursorMode(AutoCursorModes.disabled)
     .setMouseInteractions(false)
 
 // ----- Setup axes -----
-const gridStrokeStyle = new SolidLine({
-    thickness: 4,
-    fillStyle: theme.lightGrayFill
-})
 const axisX = chart.getDefaultAxisX()
     .setTitle('Profession')
-    .setStrokeStyle(gridStrokeStyle)
     // No default ticks.
     .setTickStrategy(AxisTickStrategies.Empty)
     // Disable interactions.
@@ -102,55 +80,29 @@ const axisX = chart.getDefaultAxisX()
 // Style the default Y Axis
 const axisY = chart.getDefaultAxisY()
     .setTitle('Age')
-    .setStrokeStyle(gridStrokeStyle)
     // Set Y-view manually.
     .setScrollStrategy(undefined)
     .setInterval(10, 63)
     // Disable interactions.
     .setMouseInteractions(false)
 
-// Style the Y Axis Ticks through the TickStrategy
-axisY
-    .setTickStrategy(
-        // Base TickStrategy to modify
-        AxisTickStrategies.Numeric,
-        // Modify the TickStrategy through a mutator
-        (tickStrategy) => tickStrategy
-            // Use custom grid stroke for the Major Ticks.
-            .setMajorTickStyle(tickStyle => tickStyle
-                .setGridStrokeStyle(gridStrokeStyle)
-            )
-            // Don't draw minor ticks.
-            .setMinorTickStyle(emptyTick)
-    )
-
 // ----- Map over per each data item -----
-const boxFigureStrokeStyle = new SolidLine({
-    thickness: 4,
-    fillStyle: theme.yellowFill
-})
 
 allData.forEach((profession, i) => {
     const data = profession.data
-    const fillStyle = new SolidFill({ color: ColorHEX(profession.color) })
     // ----- Create series for rendering this data item -----
     // Create BoxSeries.
     const boxSeries = chart.addBoxSeries()
-        .setDefaultStyle((boxAndWhiskersFigure) => boxAndWhiskersFigure
-            .setBodyFillStyle(fillStyle)
-            .setBodyStrokeStyle(boxFigureStrokeStyle)
-            .setMedianStrokeStyle(boxFigureStrokeStyle)
-            .setStrokeStyle(boxFigureStrokeStyle)
+        .setDefaultStyle((figure) => figure
             .setBodyWidth(0.70)
             .setTailWidth(0.70)
         )
 
     // Create PointSeries for outliers.
     const pointSeries = chart.addPointSeries({
-        pointShape: profession.outlierShape ? profession.outlierShape : PointShape.Circle
+        pointShape: PointShape.Circle
     })
         .setPointSize(20)
-        .setPointFillStyle(theme.yellowFill)
 
     // ----- Setup shared highlighting between box and point series -----
     boxSeries.onHover((_, cp) => pointSeries.setHighlighted(cp !== undefined))
@@ -185,10 +137,4 @@ allData.forEach((profession, i) => {
         .setValue(middle)
         .setTextFormatter(() => profession.name)
         .setGridStrokeLength(0)
-        .setMarker((marker) => marker
-            .setTextFillStyle(new SolidFill({ color: ColorHEX('#aaaf') }))
-            .setTextFont((font) => font
-                .setSize(24)
-            )
-        )
 })
