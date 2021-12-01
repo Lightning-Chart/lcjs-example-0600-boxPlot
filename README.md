@@ -77,14 +77,14 @@ Direct developer email support can be purchased through a [Support Plan][4] or b
 © Arction Ltd 2009-2020. All rights reserved.
 
 
-[XY cartesian chart]: https://www.arction.com/lightningchart-js-api-documentation/v3.1.0/classes/chartxy.html
-[Axis tick strategies]: https://www.arction.com/lightningchart-js-api-documentation/v3.1.0/globals.html#axistickstrategies
-[AutoCursor modes]: https://www.arction.com/lightningchart-js-api-documentation/v3.1.0/enums/autocursormodes.html
-[Point shapes]: https://www.arction.com/lightningchart-js-api-documentation/v3.1.0/enums/pointshape.html
-[HEX Color factory]: https://www.arction.com/lightningchart-js-api-documentation/v3.1.0/globals.html#colorhex
-[Solid Fill style]: https://www.arction.com/lightningchart-js-api-documentation/v3.1.0/classes/solidfill.html
-[Solid Line style]: https://www.arction.com/lightningchart-js-api-documentation/v3.1.0/classes/solidline.html
-[Empty Axis tick style]: https://www.arction.com/lightningchart-js-api-documentation/v3.1.0/globals.html#emptytick
-[Empty Fill style]: https://www.arction.com/lightningchart-js-api-documentation/v3.1.0/globals.html#emptyfill
-[Empty Line style]: https://www.arction.com/lightningchart-js-api-documentation/v3.1.0/globals.html#emptyline
+[XY cartesian chart]: https://www.arction.com/lightningchart-js-api-documentation/v3.3.0/classes/chartxy.html
+[Axis tick strategies]: https://www.arction.com/lightningchart-js-api-documentation/v3.3.0/globals.html#axistickstrategies
+[AutoCursor modes]: https://www.arction.com/lightningchart-js-api-documentation/v3.3.0/enums/autocursormodes.html
+[Point shapes]: https://www.arction.com/lightningchart-js-api-documentation/v3.3.0/enums/pointshape.html
+[HEX Color factory]: https://www.arction.com/lightningchart-js-api-documentation/v3.3.0/globals.html#colorhex
+[Solid Fill style]: https://www.arction.com/lightningchart-js-api-documentation/v3.3.0/classes/solidfill.html
+[Solid Line style]: https://www.arction.com/lightningchart-js-api-documentation/v3.3.0/classes/solidline.html
+[Empty Axis tick style]: https://www.arction.com/lightningchart-js-api-documentation/v3.3.0/globals.html#emptytick
+[Empty Fill style]: https://www.arction.com/lightningchart-js-api-documentation/v3.3.0/globals.html#emptyfill
+[Empty Line style]: https://www.arction.com/lightningchart-js-api-documentation/v3.3.0/globals.html#emptyline
 
