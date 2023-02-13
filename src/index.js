@@ -15,7 +15,7 @@ const {
     AutoCursorModes,
     PointShape,
     UIElementBuilders,
-    Themes
+    Themes,
 } = lcjs
 
 // ----- Define data for application -----
@@ -28,10 +28,8 @@ const allData = [
             median: 21.2,
             upperQuartile: 28.5,
             upperExtreme: 48.1,
-            outliers: [
-                50.1
-            ]
-        }
+            outliers: [50.1],
+        },
     },
     {
         name: 'Cashier',
@@ -41,11 +39,8 @@ const allData = [
             median: 20.1,
             upperQuartile: 26.7,
             upperExtreme: 41.6,
-            outliers: [
-                52.2,
-                59.9
-            ]
-        }
+            outliers: [52.2, 59.9],
+        },
     },
     {
         name: 'Janitor',
@@ -55,22 +50,23 @@ const allData = [
             median: 22.7,
             upperQuartile: 34.1,
             upperExtreme: 41.0,
-            outliers: []
-        }
-    }
+            outliers: [],
+        },
+    },
 ]
 
 // ----- Create a XY Chart -----
-const chart = lightningChart().ChartXY({
-    // theme: Themes.darkGold
-})
+const chart = lightningChart()
+    .ChartXY({
+        // theme: Themes.darkGold
+    })
     .setTitle('Age distribution across professions')
     // Disable interactions.
     .setAutoCursorMode(AutoCursorModes.disabled)
-    .setMouseInteractions(false)
 
 // ----- Setup axes -----
-const axisX = chart.getDefaultAxisX()
+const axisX = chart
+    .getDefaultAxisX()
     .setTitle('Profession')
     // No default ticks.
     .setTickStrategy(AxisTickStrategies.Empty)
@@ -78,11 +74,12 @@ const axisX = chart.getDefaultAxisX()
     .setMouseInteractions(false)
 
 // Style the default Y Axis
-const axisY = chart.getDefaultAxisY()
+const axisY = chart
+    .getDefaultAxisY()
     .setTitle('Age')
     // Set Y-view manually.
     .setScrollStrategy(undefined)
-    .setInterval(10, 63)
+    .setInterval({ start: 10, end: 63, stopAxisAfter: false })
     // Disable interactions.
     .setMouseInteractions(false)
 
@@ -92,21 +89,20 @@ allData.forEach((profession, i) => {
     const data = profession.data
     // ----- Create series for rendering this data item -----
     // Create BoxSeries.
-    const boxSeries = chart.addBoxSeries()
-        .setDefaultStyle((figure) => figure
-            .setBodyWidth(0.70)
-            .setTailWidth(0.70)
-        )
+    const boxSeries = chart.addBoxSeries().setDefaultStyle((figure) => figure.setBodyWidth(0.7).setTailWidth(0.7))
 
     // Create PointSeries for outliers.
-    const pointSeries = chart.addPointSeries({
-        pointShape: PointShape.Circle
-    })
+    const pointSeries = chart
+        .addPointSeries({
+            pointShape: PointShape.Circle,
+        })
         .setPointSize(20)
 
     // ----- Setup shared highlighting between box and point series -----
-    boxSeries.onHover((_, cp) => pointSeries.setHighlighted(cp !== undefined))
-    pointSeries.onHover((_, cp) => boxSeries.setHighlighted(cp !== undefined))
+    boxSeries.onMouseEnter((_, cp) => pointSeries.setHighlight(true))
+    boxSeries.onMouseLeave((_, cp) => pointSeries.setHighlight(false))
+    pointSeries.onMouseEnter((_, cp) => boxSeries.setHighlight(true))
+    pointSeries.onMouseLeave((_, cp) => boxSeries.setHighlight(false))
 
     // ----- Compute X positions for BoxFigure -----
     const start = i * 1
@@ -128,12 +124,13 @@ allData.forEach((profession, i) => {
     data.outliers.forEach((outlier) => {
         pointSeries.add({
             x: middle,
-            y: outlier
+            y: outlier,
         })
     })
 
     // ----- Create CustomTick on X-Axis for displaying name of profession -----
-    axisX.addCustomTick(UIElementBuilders.AxisTick)
+    axisX
+        .addCustomTick()
         .setValue(middle)
         .setTextFormatter(() => profession.name)
         .setGridStrokeLength(0)
