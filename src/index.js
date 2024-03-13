@@ -58,7 +58,7 @@ const allData = [
 // ----- Create a XY Chart -----
 const chart = lightningChart()
     .ChartXY({
-        theme: Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined,
+        theme: Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined
     })
     .setTitle('Age distribution across professions')
     // Disable interactions.
