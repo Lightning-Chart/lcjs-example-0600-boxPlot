@@ -2,7 +2,7 @@
  * LightningChartJS example that showcases the creation and styling of box series.
  */
 // Import LightningChartJS
-const lcjs = require('@arction/lcjs')
+const lcjs = require('@lightningchart/lcjs')
 
 // Extract required parts from LightningChartJS.
 const {
@@ -64,7 +64,7 @@ const chart = lightningChart({
     })
     .setTitle('Age distribution across professions')
     // Disable interactions.
-    .setAutoCursorMode(AutoCursorModes.disabled)
+    .setCursorMode(undefined)
 
 // ----- Setup axes -----
 const axisX = chart
