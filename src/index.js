@@ -5,18 +5,7 @@
 const lcjs = require('@lightningchart/lcjs')
 
 // Extract required parts from LightningChartJS.
-const {
-    lightningChart,
-    emptyTick,
-    ColorHEX,
-    SolidFill,
-    SolidLine,
-    AxisTickStrategies,
-    AutoCursorModes,
-    PointShape,
-    UIElementBuilders,
-    Themes,
-} = lcjs
+const { lightningChart, AxisTickStrategies, emptyLine, Themes } = lcjs
 
 // ----- Define data for application -----
 const allData = [
@@ -72,8 +61,6 @@ const axisX = chart
     .setTitle('Profession')
     // No default ticks.
     .setTickStrategy(AxisTickStrategies.Empty)
-    // Disable interactions.
-    .setMouseInteractions(false)
 
 // Style the default Y Axis
 const axisY = chart
@@ -82,8 +69,6 @@ const axisY = chart
     // Set Y-view manually.
     .setScrollStrategy(undefined)
     .setInterval({ start: 10, end: 63, stopAxisAfter: false })
-    // Disable interactions.
-    .setMouseInteractions(false)
 
 // ----- Map over per each data item -----
 
@@ -95,16 +80,17 @@ allData.forEach((profession, i) => {
 
     // Create PointSeries for outliers.
     const pointSeries = chart
-        .addPointSeries({
-            pointShape: PointShape.Circle,
+        .addPointLineAreaSeries({
+            dataPattern: null,
         })
+        .setStrokeStyle(emptyLine)
         .setPointSize(20)
 
     // ----- Setup shared highlighting between box and point series -----
-    boxSeries.onMouseEnter((_, cp) => pointSeries.setHighlight(true))
-    boxSeries.onMouseLeave((_, cp) => pointSeries.setHighlight(false))
-    pointSeries.onMouseEnter((_, cp) => boxSeries.setHighlight(true))
-    pointSeries.onMouseLeave((_, cp) => boxSeries.setHighlight(false))
+    boxSeries.addEventListener('pointerenter', () => pointSeries.setHighlight(true))
+    boxSeries.addEventListener('pointerleave', () => pointSeries.setHighlight(false))
+    pointSeries.addEventListener('pointerenter', () => boxSeries.setHighlight(true))
+    pointSeries.addEventListener('pointerleave', () => boxSeries.setHighlight(false))
 
     // ----- Compute X positions for BoxFigure -----
     const start = i * 1
