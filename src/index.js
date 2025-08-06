@@ -49,6 +49,7 @@ const chart = lightningChart({
             resourcesBaseUrl: new URL(document.head.baseURI).origin + new URL(document.head.baseURI).pathname + 'resources/',
         })
     .ChartXY({
+        legend: { visible: false },
         theme: Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined,
     })
     .setTitle('Age distribution across professions')
@@ -61,6 +62,7 @@ const axisX = chart
     .setTitle('Profession')
     // No default ticks.
     .setTickStrategy(AxisTickStrategies.Empty)
+    .setTitlePosition('center')
 
 // Style the default Y Axis
 const axisY = chart
@@ -79,12 +81,7 @@ allData.forEach((profession, i) => {
     const boxSeries = chart.addBoxSeries().setDefaultStyle((figure) => figure.setBodyWidth(0.7).setTailWidth(0.7))
 
     // Create PointSeries for outliers.
-    const pointSeries = chart
-        .addPointLineAreaSeries({
-            dataPattern: null,
-        })
-        .setStrokeStyle(emptyLine)
-        .setPointSize(20)
+    const pointSeries = chart.addPointSeries({}).setStrokeStyle(emptyLine).setPointSize(20)
 
     // ----- Setup shared highlighting between box and point series -----
     boxSeries.addEventListener('pointerenter', () => pointSeries.setHighlight(true))
@@ -110,7 +107,7 @@ allData.forEach((profession, i) => {
 
     // ----- Render outliers -----
     data.outliers.forEach((outlier) => {
-        pointSeries.add({
+        pointSeries.appendSample({
             x: middle,
             y: outlier,
         })
