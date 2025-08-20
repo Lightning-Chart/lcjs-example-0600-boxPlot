@@ -74,17 +74,17 @@ Direct developer email support can be purchased through a [Support Plan][4] or b
 [3]: https://stackoverflow.com/questions/tagged/lightningchart
 [4]: https://lightningchart.com/support-services/
 
-© LightningChart Ltd 2009-2022. All rights reserved.
+© LightningChart Ltd 2009-2025. All rights reserved.
 
 
-[XY cartesian chart]: https://lightningchart.com/js-charts/api-documentation/v8.0.0/classes/ChartXY.html
-[Axis tick strategies]: https://lightningchart.com/js-charts/api-documentation/v8.0.0/variables/AxisTickStrategies.html
-[AutoCursor modes]: https://lightningchart.com/js-charts/api-documentation/v8.0.0/enums/AutoCursorModes.html
-[Point shapes]: https://lightningchart.com/js-charts/api-documentation/v8.0.0/enums/PointShape.html
-[HEX Color factory]: https://lightningchart.com/js-charts/api-documentation/v8.0.0/functions/ColorHEX.html
-[Solid Fill style]: https://lightningchart.com/js-charts/api-documentation/v8.0.0/classes/SolidFill.html
-[Solid Line style]: https://lightningchart.com/js-charts/api-documentation/v8.0.0/classes/SolidLine.html
-[Empty Axis tick style]: https://lightningchart.com/js-charts/api-documentation/v8.0.0/variables/emptyTick.html
-[Empty Fill style]: https://lightningchart.com/js-charts/api-documentation/v8.0.0/variables/emptyFill-1.html
-[Empty Line style]: https://lightningchart.com/js-charts/api-documentation/v8.0.0/variables/emptyLine.html
+[XY cartesian chart]: https://lightningchart.com/js-charts/api-documentation/v8.0.1/classes/ChartXY.html
+[Axis tick strategies]: https://lightningchart.com/js-charts/api-documentation/v8.0.1/variables/AxisTickStrategies.html
+[AutoCursor modes]: https://lightningchart.com/js-charts/api-documentation/v8.0.1/enums/AutoCursorModes.html
+[Point shapes]: https://lightningchart.com/js-charts/api-documentation/v8.0.1/enums/PointShape.html
+[HEX Color factory]: https://lightningchart.com/js-charts/api-documentation/v8.0.1/functions/ColorHEX.html
+[Solid Fill style]: https://lightningchart.com/js-charts/api-documentation/v8.0.1/classes/SolidFill.html
+[Solid Line style]: https://lightningchart.com/js-charts/api-documentation/v8.0.1/classes/SolidLine.html
+[Empty Axis tick style]: https://lightningchart.com/js-charts/api-documentation/v8.0.1/variables/emptyTick.html
+[Empty Fill style]: https://lightningchart.com/js-charts/api-documentation/v8.0.1/variables/emptyFill-1.html
+[Empty Line style]: https://lightningchart.com/js-charts/api-documentation/v8.0.1/variables/emptyLine.html
 
