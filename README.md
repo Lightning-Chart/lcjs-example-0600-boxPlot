@@ -31,7 +31,7 @@ _Outliers_ are sometimes drawn as individual dots that are in-line with the whis
 
 [//]: # 'IMPORTANT: The assets will not show before README.md is built - relative path is different!'
 
-![](./assets/boxFigure.png)
+![Box figure](./assets/boxFigure.png)
 
 Here are the types of observations one can make from viewing a _Box And Whiskers Chart_:
 
